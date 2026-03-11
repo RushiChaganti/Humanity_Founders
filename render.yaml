@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: humanity-founders
+    env: docker
+    plan: free
+    region: oregon # or your preferred region
+    dockerfilePath: Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: humanity-db
+          property: connectionString
+      - key: ALLOWED_ORIGINS
+        value: "*" # Set this to your actual domain after first deployment for better security
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+databases:
+  - name: humanity-db
+    plan: free
+    databaseName: humanity_founders
+    user: humanity_admin

@@ -12,6 +12,10 @@ DATABASE_URL = os.getenv(
     "sqlite:///./test.db"
 )
 
+# Fix for Render's DATABASE_URL using 'postgres://' instead of 'postgresql://'
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 # Create engine based on database type
 if DATABASE_URL.startswith("sqlite"):
     engine = create_engine(
