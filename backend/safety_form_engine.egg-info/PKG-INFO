@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: safety-form-engine
+Version: 0.1.0
+Summary: Dynamic Safety Form Engine Backend
+Requires-Python: <3.14,>=3.11
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+Requires-Dist: psycopg2-binary
+Requires-Dist: sqlalchemy
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: python-dotenv
+Requires-Dist: cors

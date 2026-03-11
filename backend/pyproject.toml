@@ -1,0 +1,22 @@
+[project]
+name = "safety-form-engine"
+version = "0.1.0"
+description = "Dynamic Safety Form Engine Backend"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "psycopg2-binary",
+    "sqlalchemy",
+    "pydantic",
+    "pydantic-settings",
+    "python-dotenv",
+    "cors",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["database", "init_db", "logic_engine", "main", "models", "schemas"]
